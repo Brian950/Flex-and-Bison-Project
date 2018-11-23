@@ -7,7 +7,7 @@ int main(){
 	if(result)
 		std::cout << "Valid JIBUC program." << std::endl;
 	else
-		std::cout << "Inavlid JIBUC program." << std::endl;
+		std::cout << "Invalid JIBUC program." << std::endl;
 
 	return result;
 }

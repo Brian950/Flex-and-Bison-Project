@@ -86,12 +86,15 @@ void add_identifier(char *identifier1, char *identifier2);
 int how_many_digits(int num);
 void get_var(char *var);
 
+// Value returned to main function
+int exit_val = 1;
+
 int stored_var_count = 0;
 std::vector <std::string> var_list;
 std::vector <int> var_digits;
 
 
-#line 95 "parser.tab.c" /* yacc.c:339  */
+#line 98 "parser.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -149,7 +152,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 30 "parser.y" /* yacc.c:355  */
+#line 33 "parser.y" /* yacc.c:355  */
 
 	char *name; 
 	int digits;
@@ -157,7 +160,7 @@ union YYSTYPE
 	char *text;
 	char *unknown;
 
-#line 161 "parser.tab.c" /* yacc.c:355  */
+#line 164 "parser.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -174,7 +177,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 178 "parser.tab.c" /* yacc.c:358  */
+#line 181 "parser.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -473,9 +476,9 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    46,    46,    49,    50,    52,    54,    57,    58,    60,
-      60,    60,    60,    62,    64,    65,    66,    67,    69,    71,
-      72,    74,    75,    77,    78,    80
+       0,    49,    49,    52,    53,    55,    57,    60,    61,    63,
+      63,    63,    63,    65,    67,    68,    69,    70,    72,    74,
+      75,    77,    78,    80,    81,    83
 };
 #endif
 
@@ -1276,133 +1279,133 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 46 "parser.y" /* yacc.c:1646  */
+#line 49 "parser.y" /* yacc.c:1646  */
     {}
-#line 1282 "parser.tab.c" /* yacc.c:1646  */
+#line 1285 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 49 "parser.y" /* yacc.c:1646  */
+#line 52 "parser.y" /* yacc.c:1646  */
     {}
-#line 1288 "parser.tab.c" /* yacc.c:1646  */
+#line 1291 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 50 "parser.y" /* yacc.c:1646  */
+#line 53 "parser.y" /* yacc.c:1646  */
     {}
-#line 1294 "parser.tab.c" /* yacc.c:1646  */
+#line 1297 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 52 "parser.y" /* yacc.c:1646  */
+#line 55 "parser.y" /* yacc.c:1646  */
     { store_var((yyvsp[-2].digits), (yyvsp[-1].name)); }
-#line 1300 "parser.tab.c" /* yacc.c:1646  */
+#line 1303 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 54 "parser.y" /* yacc.c:1646  */
+#line 57 "parser.y" /* yacc.c:1646  */
     {}
-#line 1306 "parser.tab.c" /* yacc.c:1646  */
+#line 1309 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 57 "parser.y" /* yacc.c:1646  */
+#line 60 "parser.y" /* yacc.c:1646  */
     {}
-#line 1312 "parser.tab.c" /* yacc.c:1646  */
+#line 1315 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 58 "parser.y" /* yacc.c:1646  */
+#line 61 "parser.y" /* yacc.c:1646  */
     {}
-#line 1318 "parser.tab.c" /* yacc.c:1646  */
+#line 1321 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 60 "parser.y" /* yacc.c:1646  */
+#line 63 "parser.y" /* yacc.c:1646  */
     {}
-#line 1324 "parser.tab.c" /* yacc.c:1646  */
+#line 1327 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 62 "parser.y" /* yacc.c:1646  */
+#line 65 "parser.y" /* yacc.c:1646  */
     {}
-#line 1330 "parser.tab.c" /* yacc.c:1646  */
+#line 1333 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 64 "parser.y" /* yacc.c:1646  */
+#line 67 "parser.y" /* yacc.c:1646  */
     {}
-#line 1336 "parser.tab.c" /* yacc.c:1646  */
+#line 1339 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 65 "parser.y" /* yacc.c:1646  */
+#line 68 "parser.y" /* yacc.c:1646  */
     { valid_var((yyvsp[-1].name)); }
-#line 1342 "parser.tab.c" /* yacc.c:1646  */
+#line 1345 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 66 "parser.y" /* yacc.c:1646  */
+#line 69 "parser.y" /* yacc.c:1646  */
     { valid_var((yyvsp[-2].name)); }
-#line 1348 "parser.tab.c" /* yacc.c:1646  */
+#line 1351 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 67 "parser.y" /* yacc.c:1646  */
+#line 70 "parser.y" /* yacc.c:1646  */
     {}
-#line 1354 "parser.tab.c" /* yacc.c:1646  */
+#line 1357 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 69 "parser.y" /* yacc.c:1646  */
+#line 72 "parser.y" /* yacc.c:1646  */
     {}
-#line 1360 "parser.tab.c" /* yacc.c:1646  */
+#line 1363 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 71 "parser.y" /* yacc.c:1646  */
+#line 74 "parser.y" /* yacc.c:1646  */
     { valid_var((yyvsp[-1].name)); }
-#line 1366 "parser.tab.c" /* yacc.c:1646  */
+#line 1369 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 72 "parser.y" /* yacc.c:1646  */
+#line 75 "parser.y" /* yacc.c:1646  */
     { valid_var((yyvsp[-2].name)); }
-#line 1372 "parser.tab.c" /* yacc.c:1646  */
+#line 1375 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 74 "parser.y" /* yacc.c:1646  */
+#line 77 "parser.y" /* yacc.c:1646  */
     { move_int((yyvsp[-3].digits), (yyvsp[-1].name)); }
-#line 1378 "parser.tab.c" /* yacc.c:1646  */
+#line 1381 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 75 "parser.y" /* yacc.c:1646  */
+#line 78 "parser.y" /* yacc.c:1646  */
     { move_identifier((yyvsp[-3].name), (yyvsp[-1].name)); }
-#line 1384 "parser.tab.c" /* yacc.c:1646  */
+#line 1387 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 77 "parser.y" /* yacc.c:1646  */
+#line 80 "parser.y" /* yacc.c:1646  */
     { add_int((yyvsp[-3].digits), (yyvsp[-1].name)); }
-#line 1390 "parser.tab.c" /* yacc.c:1646  */
+#line 1393 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 78 "parser.y" /* yacc.c:1646  */
+#line 81 "parser.y" /* yacc.c:1646  */
     { add_identifier((yyvsp[-3].name), (yyvsp[-1].name)); }
-#line 1396 "parser.tab.c" /* yacc.c:1646  */
+#line 1399 "parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 80 "parser.y" /* yacc.c:1646  */
-    { exit(1); }
-#line 1402 "parser.tab.c" /* yacc.c:1646  */
+#line 83 "parser.y" /* yacc.c:1646  */
+    { return exit_val; }
+#line 1405 "parser.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1406 "parser.tab.c" /* yacc.c:1646  */
+#line 1409 "parser.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1630,7 +1633,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 82 "parser.y" /* yacc.c:1906  */
+#line 85 "parser.y" /* yacc.c:1906  */
 
 
 void store_var(int digits, char *name){
@@ -1645,6 +1648,7 @@ void store_var(int digits, char *name){
 	}	
 	else{
 		printf("Warning: Identifier '%s' already exists. [Line: %d]\n", name, yylineno);
+		exit_val = 0;
 	}
 	
 }
@@ -1699,6 +1703,7 @@ void valid_var(char *name){
 	}
 	else{
 		printf("Warning: No identifier found with name '%s'. [Line: %d]\n", name, yylineno);
+		exit_val = 0;
 	}
 
 }
@@ -1716,20 +1721,25 @@ void move_int(int num, char *identifier){
 				int num_digits = how_many_digits(num);
 				if(num_digits > var_digits[x]){
 					printf("Warning: Can't move int of size %d to an identifier of size %d. [Line: %d]\n", num_digits, var_digits[x], yylineno);
+					exit_val = 0;				
 				}
 			}
 		}
 	}
 	else{
 		printf("Warning: No identifier found with name '%s'. [Line: %d]\n", identifier, yylineno);
+		exit_val = 0;
 	}
+
 }
 
 
 void move_identifier(char *identifier1, char *identifier2){
 
 	remove_terminator(identifier1);
+	get_var(identifier1);
 	remove_terminator(identifier2);
+
 	if(already_stored(identifier1)){
 		if(already_stored(identifier2)){
 			int size1 = 0;
@@ -1748,6 +1758,7 @@ void move_identifier(char *identifier1, char *identifier2){
 			
 			if(size1 > size2){
 				printf("Warning: Can't move identifier of size %d to an identifier of size %d. [Line: %d]\n", size1, size2, yylineno);
+				exit_val = 0;			
 			}
 			else{
 				// Do nothing valid move
@@ -1755,20 +1766,81 @@ void move_identifier(char *identifier1, char *identifier2){
 		}
 		else{
 			printf("Warning: No identifier found with name '%s'. [Line: %d]\n", identifier2, yylineno);
+			exit_val = 0;
 		}
 	}
 	else{
 		printf("Warning: No identifier found with name '%s'. [Line: %d]\n", identifier1, yylineno);
+		exit_val = 0;
 	}
+
 }
 
 
 void add_int(int num, char *identifier){
+	
+	remove_terminator(identifier);
+	
+	if(already_stored(identifier)){
+		int x;
+		std::string var = identifier;
+		for(x = 0; x < stored_var_count; x++){
+			if(var.compare(var_list[x]) == 0){
+				int num_digits = how_many_digits(num);
+				if(num_digits > var_digits[x]){
+					printf("Warning: Can't add int of size %d to an identifier of size %d. [Line: %d]\n", num_digits, var_digits[x], yylineno);
+					exit_val = 0;				
+				}
+			}
+		}
+	}
+	else{
+		printf("Warning: No identifier found with name '%s'. [Line: %d]\n", identifier, yylineno);
+		exit_val = 0;
+	}
 
 }
 
 
 void add_identifier(char *identifier1, char *identifier2){
+
+	remove_terminator(identifier1);
+	get_var(identifier1);
+	remove_terminator(identifier2);
+
+	if(already_stored(identifier1)){
+		if(already_stored(identifier2)){
+			int size1 = 0;
+			int size2 = 0;
+			std::string var1 = identifier1;
+			std::string var2 = identifier2;
+			int x;
+			for(x = 0; x < stored_var_count; x++){
+				if(var1.compare(var_list[x]) == 0){
+					size1 = var_digits[x];
+				}
+				else if(var2.compare(var_list[x]) == 0){
+					size2 = var_digits[x];
+				}
+			}
+			
+			if(size1 > size2){
+				printf("Warning: Can't add identifier of size %d to an identifier of size %d. [Line: %d]\n", size1, size2, yylineno);
+				exit_val = 0;			
+			}
+			else{
+				// Do nothing valid add
+			}
+		}
+		else{
+			printf("Warning: No identifier found with name '%s'. [Line: %d]\n", identifier2, yylineno);
+			exit_val = 0;
+		}
+	}
+	else{
+		printf("Warning: No identifier found with name '%s'. [Line: %d]\n", identifier1, yylineno);
+		exit_val = 0;
+	}
 
 }
 
